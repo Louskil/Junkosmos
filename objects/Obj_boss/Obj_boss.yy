@@ -4,14 +4,13 @@
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"Obj_bullet","path":"objects/Obj_bullet/Obj_bullet.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"Obj_boss",
   "overriddenProperties":[],
   "parent":{
-    "name":"enemies",
-    "path":"folders/Объекты/enemies.yy",
+    "name":"Enemies",
+    "path":"folders/Объекты/Enemies.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -30,7 +29,7 @@
   "properties":[],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
-  "solid":true,
+  "solid":false,
   "spriteId":{
     "name":"spr_boss_big",
     "path":"sprites/spr_boss_big/spr_boss_big.yy",

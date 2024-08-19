@@ -10,8 +10,8 @@
   "name":"Obj_enemy_sentinel",
   "overriddenProperties":[],
   "parent":{
-    "name":"enemies",
-    "path":"folders/Объекты/enemies.yy",
+    "name":"Enemies",
+    "path":"folders/Объекты/Enemies.yy",
   },
   "parentObjectId":null,
   "persistent":false,

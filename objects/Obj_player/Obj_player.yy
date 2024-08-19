@@ -12,8 +12,6 @@
     {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"Obj_enemy_ram","path":"objects/Obj_enemy_ram/Obj_enemy_ram.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"Obj_enemy_ram_t","path":"objects/Obj_enemy_ram_t/Obj_enemy_ram_t.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"Obj_enemy_bullet_t","path":"objects/Obj_enemy_bullet_t/Obj_enemy_bullet_t.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"Obj_enemy_bullet_boss","path":"objects/Obj_enemy_bullet_boss/Obj_enemy_bullet_boss.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"Obj_enemy_bullet_boss_canons","path":"objects/Obj_enemy_bullet_boss_canons/Obj_enemy_bullet_boss_canons.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"Obj_player",

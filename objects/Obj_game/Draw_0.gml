@@ -13,8 +13,7 @@ if !surface_exists(paused_surf)
     }
 	else
     {
-    //draw_surface(paused_surf, camera_get_view_x(view_camera[0])/2.5, camera_get_view_y(view_camera[0])/2.5);
-	draw_surface(paused_surf, 0, 0);
+    draw_surface(paused_surf, camera_get_view_x(view_camera[0])/2, camera_get_view_y(view_camera[0])/2);
     //draw_set_alpha(0.5);
     draw_rectangle_colour(0, 0, room_width, room_height, c_black, c_black, c_black, c_black, false);
     //draw_set_alpha(1);
