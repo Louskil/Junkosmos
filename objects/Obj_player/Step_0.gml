@@ -160,4 +160,13 @@ else
 	//global.Time = global.Time - 1;
 }
 
+if stage >= 2 {
+	global.showdoor1 = true;
+	}
+	
+if stage = 3 {
+	global.showdoor2 = true;
+	}
+
+
 move_wrap(true, true, 0)
