@@ -1,14 +1,26 @@
 /// @description Movement
 // Вы можете записать свой код в этом редакторе
+if (global.shop) {speed = 0; exit;}
 step = step + 1;
 if explosion_cooldown > 0 {explosion_cooldown -= 1;}
 if shot_cooldown > 0 {shot_cooldown -= 1;}
 
 move_bounce_solid(0);
 
+if ds_list_empty(global.inv) == true {}
+else {
+	for (var i = 0; i<ds_list_size(global.inv); i++) {
+		var arr_player = global.inv[| i];	
+		if ("multi_shot" == string(arr_player)) {
+			global.multishot = true;
+			break;
+		}
+	}
+}
+
 if stage == 1
 {
-	global.multishot = false;
+	//global.multishot = false;
 	global.exp_size = 1;
 	camera_set_view_size(cam, 1600, 1200);
 	camera_set_view_border(cam, 800, 600);
@@ -21,7 +33,7 @@ if stage == 1
 else if stage == 2
 {
 	global.exp_size = 2;
-	global.multishot = false;
+	//global.multishot = false;
 	camera_set_view_size(cam, (1600*1.25), (1200*1.25));
 	camera_set_view_border(cam, (800*1.25), (600*1.25));
 	//sprite_index = spr_player_1;
@@ -35,7 +47,7 @@ else if stage == 2
 else if stage == 3
 {
 	global.exp_size = 3;
-	global.multishot = true;
+	//global.multishot = true;
 	camera_set_view_size(cam, (1600*1.5), (1200*1.5));
 	camera_set_view_border(cam, (800*1.5), (600*1.5));
 	image_xscale = 2;
@@ -134,13 +146,28 @@ if mouse_check_button(mb_left) or keyboard_check(ord("X"))
 }		
 
 
-if keyboard_check(vk_space) 
+if keyboard_check(vk_space)
 {
-	if explosion_cooldown > 0 {}
-	else 
-	{
-		instance_create_layer(x-(120*global.exp_size), y-(120*global.exp_size), "Instances", Obj_explosion);
-		explosion_cooldown += 480;
+	var available = false;
+	if ds_list_empty(global.inv) == true {}
+		else {
+			for (var i = 0; i<ds_list_size(global.inv); i++) {
+				var arr_player = global.inv[| i];
+				
+				if ("outburst" == string(arr_player)) {
+					available = true; 
+					break;
+				}
+			}
+		}
+	if available == false {}
+	else {
+		if explosion_cooldown > 0 {}
+		else 
+		{
+			instance_create_layer(x-(120*global.exp_size), y-(120*global.exp_size), "Instances", Obj_explosion);
+			explosion_cooldown += 480;
+		}
 	}
 }
 
@@ -149,7 +176,32 @@ if keyboard_check(ord("R"))
         game_restart();
 }
 
-if global.hp_mass <= 0 {effect_create_above(ef_explosion, x, y, 2, c_teal); global.player_defeated = true; instance_destroy();}
+if global.hp_mass <= 0 { // death in a fight
+	var revive = false;
+	if ds_list_empty(global.inv) == true {}
+		else {
+			for (var i = 0; i<ds_list_size(global.inv); i++) {
+				var arr_player = global.inv[| i];
+				
+				if ("1_up" == string(arr_player)) {
+					ds_list_delete(global.inv, i)
+					revive = true; 
+					break;
+				}
+			}
+		}
+	if revive == false {
+		effect_create_above(ef_explosion, x, y, 2, c_teal); 
+		global.player_defeated = true; 
+		instance_destroy();
+	}
+	else {
+		global.hp_mass = 200;
+		global.player_defeated = false; 
+		flash = 0.8
+		instance_create_layer(x-(120*global.exp_size), y-(120*global.exp_size), "Instances", Obj_explosion);
+	}
+}
 
 //global.Time = 120
 if step % 120 {}

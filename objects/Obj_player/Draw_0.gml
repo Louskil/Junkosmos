@@ -13,3 +13,8 @@ if (flash > 0)
 	shader_reset();
 	//gpu_set_blendmode(bm_normal);
 }
+
+// inventory draw, draws items on player position debug use only 
+for (var i=0; i<ds_list_size(global.inv); i++){
+	draw_text(x, y+i*30, global.inv[| i]);
+}
